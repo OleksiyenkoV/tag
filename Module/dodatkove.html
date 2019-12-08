@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="EN">
+
+<head>
+	<meta charset="utf-8">
+	<title>module</title>
+</head>
+
+<body>
+
+	<style type="text/css">
+		body{
+			background: black;	
+		}
+
+		.audio{
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			align-items: center;
+			width: 100%;
+			height: 200px;
+		}
+
+		.video{
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			width: 100%;
+			height: 400px;
+		
+		}
+
+		.picture{
+			width: 100%;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			height: 356px;
+		}
+
+		.load{
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			align-items: center;
+		}
+
+	</style>
+
+	<div class="audio">
+		<audio controls>
+	  		<source src="audio/audio.mp3" type="audio/mp3">
+			Your browser does not support the audio element.
+		</audio>
+		<audio controls>
+	  		<source src="audio/audio.ogg" type="audio/ogg">
+			Your browser does not support the audio element.
+		</audio>
+	</div>
+
+
+	<div class="video">
+	  	<video width="400" height="300" controls="controls" poster="video/video.jpg">
+	   		<source src="video/video.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>  		
+	   		Your browser does not support the video element. 
+	  	</video>
+	  	<video width="400" height="300" controls="controls" poster="video/video.jpg">
+	   		<source src="video/video.webm" type='video/webm; codecs="vp8, vorbis"'>
+	   		Your browser does not support the video element. 
+	  	</video>
+  	</div>
+
+
+  	<div class="picture">
+  		<picture>
+  			<source srcset="img/images.png">
+   			<img class="lazy" data-src="img/html5-logo.png" width="256" height="256" alt="svg">
+  		</picture>
+  		<picture>
+  			<source srcset="img/images.png">
+   			<img class="lazy" data-src="img/images.png" width="256" height="256" alt="png">
+  		</picture>
+  		<picture>
+  			<source srcset="img/images.jpg">
+   			<img class="lazy" data-src="img/images.jpg" width="256" height="256" alt="jpg">
+  		</picture>
+  		<picture>
+  			<source srcset="img/images.webp">
+   			<img class="lazy" data-src="img/images.webp" width="256" height="256" alt="webp">
+  		</picture>
+  		<picture>
+  			<source srcset="img/images.gif">
+   			<img class="lazy" data-src="img/images.gif" width="256" height="256" alt="gif">
+  		</picture>
+  	</div>
+
+
+	<div class="load">
+	  	<img class="lazy" data-original="https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" width="500" height="500">
+	  	<img class="lazy" data-original="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" width="500" height="500">
+	  	<img class="lazy" data-original="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxRzdejXyEr3LrEavCkIR5VnxBZJ_Dnk39UaOlNIwNf_40nX6E&s" width="500" height="500">
+	  	<img class="lazy" data-original="https://images.freeimages.com/images/small-previews/2fe/butterfly-1390152.jpg" width="500" height="500">
+	</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="jquery.lazyload.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+	$(document).ready(function () {
+		$("img.lazy").lazyload({
+			effect : "fadeIn"
+		});
+	});
+
+</script>
+
+
+</body>
+</html>
